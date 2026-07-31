@@ -55,3 +55,41 @@ VALUES
 (115,'Statistics for Data Science','Mathematics','Kavita Sharma',42,'Intermediate',3299,25,4.6,8900,'English','Yes','2023-01-25','2026-07-20','Active','EduPlus','India',2950000,85.20,2600);
 
 SELECT * FROM Courses;
+
+CREATE TABLE Enrollments
+(
+    EnrollmentID INT PRIMARY KEY,
+    CourseID INT,
+    StudentName VARCHAR(100),
+    StudentEmail VARCHAR(100),
+    EnrollmentDate DATE,
+    PaymentStatus VARCHAR(20),
+    AmountPaid DECIMAL(10,2),
+    CompletionStatus VARCHAR(20),
+    FeedbackRating DECIMAL(2,1),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);
+
+INSERT INTO Enrollments
+VALUES
+(1001,101,'Rahul Sharma','rahul@gmail.com','2026-01-05','Paid',2399,'Completed',4.8),
+
+(1002,101,'Priya Patel','priya@gmail.com','2026-01-10','Paid',2399,'In Progress',4.5),
+
+(1003,102,'Amit Verma','amit@gmail.com','2026-01-12','Paid',2974,'Completed',4.9),
+
+(1004,102,'Neha Singh','neha@gmail.com','2026-01-15','Pending',0,'Not Started',NULL),
+
+(1005,103,'Karan Mehta','karan@gmail.com','2026-01-18','Paid',1399,'Completed',4.4),
+
+(1006,104,'Sneha Joshi','sneha@gmail.com','2026-01-20','Paid',2999,'In Progress',4.7),
+
+(1007,105,'Rohan Shah','rohan@gmail.com','2026-01-25','Paid',7199,'Completed',5.0),
+
+(1008,107,'Anjali Desai','anjali@gmail.com','2026-01-28','Pending',0,'Not Started',NULL),
+
+(1009,109,'Vikas Kumar','vikas@gmail.com','2026-02-01','Paid',5949,'Completed',4.9),
+
+(1010,111,'Pooja Gupta','pooja@gmail.com','2026-02-05','Paid',3599,'In Progress',4.6);
+
+SELECT * FROM Enrollments;
